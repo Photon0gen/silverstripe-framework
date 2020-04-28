@@ -57,11 +57,6 @@ if (version_compare(phpversion(), '5.3.3', '<')) {
  */
 require_once('core/Constants.php');
 
-// IIS will sometimes generate this.
-if(!empty($_SERVER['HTTP_X_ORIGINAL_URL'])) {
-	$_SERVER['REQUEST_URI'] = $_SERVER['HTTP_X_ORIGINAL_URL'];
-}
-
 // Enable the entity loader to be able to load XML in Zend_Locale_Data
 libxml_disable_entity_loader(false);
 
